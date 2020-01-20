@@ -5,41 +5,41 @@
   height: 100vh;
   width: calc(100vw - 300px);
   background-color:#ffffff;
-}
 
-.main_chat__group_info {
+&__group_info {
   height: 100px;
-}
 
-.main_chat__group_title {
+
+&__group_title {
   width: calc(100vw - 300px);
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
 
-  .main_chat__group_list  {
+  &__group_list  {
     margin-top: 35px;
     margin-left: 40px;
     p{
       color: #333333;
       font-size: 20px;
     }
-    .main_chat__group_lists-names {
+    &__group_lists-names {
       display: flex;
     }
-      .main_chat__group_name p {
+      &__group_name p {
         color : #999999;
         font-size: 12px;
         margin-top: 15px;
       }
-      .main_chat__group_list-name p {
+      &__group_list-name p {
         color : #999999;
         font-size: 12px;
         margin-top: 15px;
       }
+    }
   }
 
-  .main_chat__group_box {
+  &__group_box {
     margin: 28px 40px 0px 0px ;
     border:solid #38aef0 1px;
     height: 40px;
@@ -57,32 +57,32 @@
 
 
 
-.main_chat__message_list {
+&__message_list {
   height: calc(100vh - 190px);
   width: calc(100vw - 300px);
   background-color: #fafafa;
   padding-left: 40px;
   padding-top: 35px;
-  .main_chat__message_name {
+  &__message_name {
     margin-bottom: 12px;
     display: flex;
     color: #333333;
     font-size: 16px;
-   .main_chat__message_date {
+   &__message_date {
     color: #999999;
     font-size: 12px;
    }
   }
-  .main_chat__message_title {
+  &__message_title {
     color: #434a54;
     font-size: 14px;
     margin-bottom: 46px;
   }
 }
 
-.main_chat__message_form {
+&__message_form {
  
-  .main_chat__message_form_box {
+  &__message_form_box {
     position: relative;
     height: 90px;
     width: calc(100vw - 300px);
@@ -91,12 +91,12 @@
     }
   }
 
-  .main_chat__message__type__text {
+  &__message__type__text {
     height: 50px;
     width: calc(100% - 150px);
   }
 
-  .main_chat__message_form_box_image {
+  &message_form_box_image {
       position: absolute;
       top: 38px;
       right: 230px;
@@ -112,3 +112,4 @@
       margin-left: 15px;
       padding: 0 30px;
     }
+  }
