@@ -1,0 +1,37 @@
+- messageDatas = []
+- message1 = {name: "saya", date: "2019/11/11（wed)", title: "おはよう", message_text:"今日は夜から雨"}
+- message2 = {name:"mmm", date: "2022/2/22(mon)", title: "こんにちは", message_text:"アイウエオ"}
+- messageDatas << message1
+- messageDatas << message2
+
+.main_chat
+  .main_chat__group_info
+    .main_chat__group_title
+      .main_chat__group_list
+        %p test
+        .main_chat__group_lists-names
+          .main_chat__group_name
+            %p Member:
+          .main_chat__group_list-name
+            %p saya
+      .main_chat__group_box
+        = link_to "Edit", "#"
+
+
+  
+  .main_chat__message_list
+    - messageDatas.each do |data|
+      .main_chat__message_group
+        .main_chat__message_name
+          %p= "#{data[:name]}"
+          .main_chat__message_date
+            %p= "#{data[:date]}"
+        .main_chat__message_title
+          %p= "#{data[:title]}"
+       
+  .main_chat__message_form
+    .main_chat__message_form_box
+      %input{type: "text", class: "main_chat__message__type__text", placeholder: "type a message"}
+      .main_chat__message_form_box_image
+        = icon('fas','image')
+      %input{type: "submit", class: "submit-btn", value: "Send"}
