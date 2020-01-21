@@ -5,33 +5,33 @@
 - messageDatas << message2
 
 .main_chat
-  .main_chat__group_info
-    .main_chat__group_title
-      .main_chat__group_list
+  .group_info
+    .group_info__title
+      .group_info__title__list
         %p test
-        .main_chat__group_lists-names
-          .main_chat__group_name
+        .group_info__title__list__lists-names
+          .group_info__title__list__lists-names__member
             %p Member:
-          .main_chat__group_list-name
+          .group_info__title__list__lists-names__person
             %p saya
-      .main_chat__group_box
+      .group_box
         = link_to "Edit", "#"
 
 
   
-  .main_chat__message_list
+  .message_list
     - messageDatas.each do |data|
-      .main_chat__message_group
-        .main_chat__message_name
+      .message_group
+        .message_list__name
           %p= "#{data[:name]}"
-          .main_chat__message_date
+          .message_list__name__date
             %p= "#{data[:date]}"
-        .main_chat__message_title
+        .message_list__title
           %p= "#{data[:title]}"
        
-  .main_chat__message_form
-    .main_chat__message_form_box
-      %input{type: "text", class: "main_chat__message__type__text", placeholder: "type a message"}
-      .main_chat__message_form_box_image
+  .message_form
+    .message_form__box
+      %input{type: "text", class: "main_chat__type__text", placeholder: "type a message"}
+      .message_form_box_image
         = icon('fas','image')
       %input{type: "submit", class: "submit-btn", value: "Send"}
