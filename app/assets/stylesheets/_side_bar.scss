@@ -3,13 +3,14 @@
   width: 300px;
   background-color: #2f3e51;
   
-  &__name {  
+  .name {  
     display: flex;
     align-items: center;
     height:100px;
     width:300px;
     background-color: #253141;
-    &__name_box {
+
+    &__box {
       line-height: center;
       height: 20px;
       width: 260px;
@@ -18,9 +19,10 @@
       display: flex;
       justify-content: space-between;
        a {
-            color: white;
+        color: white;
        }
-      &__name_list p {
+
+      &__list {
         margin: 0;
         font-size: 16px;
         color: white;
@@ -28,25 +30,26 @@
         
       &__icon_list {
         display: flex;
-        .side_bar_name_iconn {
+
+        &__iconn {
           margin-left: 5px;
         }
       }
     }
   }
-  &__groups_list {
+  .groups_list {
     height: calc(100vh - 100px);
     width: 100%;
     padding: 0 20px;
-    &__groups_items {
+    &__items {
       color: #ffffff;
       font-weight: bold;
-      &__groups_name  {
+      &__name  {
         padding-top: 20px;
         padding-bottom: 5px;
         font-size: 15px;
       } 
-      &__groups_text {
+      &__text {
         font-size: 11px;
         padding-bottom: 40px;
       }
