@@ -42,8 +42,10 @@
     width: 100%;
     padding: 0 20px;
     &__items {
+      a {
       color: #ffffff;
       font-weight: bold;
+      }
       &__name  {
         padding-top: 20px;
         padding-bottom: 5px;

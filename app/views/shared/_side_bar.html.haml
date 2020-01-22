@@ -4,16 +4,19 @@
       .name__box__list
         = current_user.name
       .name__box__icon_list
-        .name__box__icon_list__icon
-          = link_to "#" do
-            = icon('fa', 'edit')
-        .name__box__icon_list__iconn
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: 'icon')
+        = link_to new_group_path do
+          .name__box__icon_list__icon
+            = link_to new_group_path do
+              = icon('fa', 'edit')
+          .name__box__icon_list__iconn
+            = link_to edit_user_path(current_user.id) do
+              = icon('fas', 'cog', class: 'icon')
 
   .groups_list
-    .groups_list__items
-      .groups_list__items__name
-        %p techcamp
-      .groups_list__items__text
-        %p まだメッセージはありません
+    - current_user.groups.each do |group|
+      .groups_list__items
+        = link_to"#" do
+          .groups_list__items__name
+            %p techcamp
+          .groups_list__items__text
+            %p まだメッセージはありません
