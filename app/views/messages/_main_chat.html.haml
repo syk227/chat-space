@@ -8,30 +8,29 @@
   .group_info
     .group_info__title
       .group_info__title__list
-        %p test
+        = @group.name
         .group_info__title__list__lists-names
-          .group_info__title__list__lists-names__member
-            %p Member:
-          .group_info__title__list__lists-names__person
-            %p saya
+          = "Member:"
+          - @group.users.each do |user|
+            = user.name
       .group_box
-        = link_to "Edit", "#"
+        = link_to "Edit", edit_group_path(@group)
 
 
   
   .message_list
-    - messageDatas.each do |data|
-      .message_group
-        .message_list__name
-          %p= "#{data[:name]}"
-          .message_list__name__date
-            %p= "#{data[:date]}"
-        .message_list__title
-          %p= "#{data[:title]}"
-       
+    .messages
+      = render @messages
+
+
+
   .message_form
-    .message_form__box
-      %input{type: "text", class: "main_chat__type__text", placeholder: "type a message"}
-      .message_form_box_image
-        = icon('fas','image')
-      %input{type: "submit", class: "submit-btn", value: "Send"}
+    = form_for [@group, @message] do |f|
+      .message_form__box
+        = f.text_field :content, class: "main_chat__type__text", placeholder: "type a message"
+        = f.label :image, class: 'message_form_box_image' do
+          = icon('fas','image')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: "submit-btn", value: "Send"
+
+
