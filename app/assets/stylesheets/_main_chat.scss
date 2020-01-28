@@ -60,6 +60,7 @@
     overflow: scroll;
     
     .message {
+      margin-bottom: 46px;
       .message_box {
         display: flex;
         &__name {
@@ -78,7 +79,6 @@
       &__title {
         color: #434a54;
         font-size: 14px;
-        margin-bottom: 46px;
       }
     }
   }
