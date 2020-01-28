@@ -45,15 +45,18 @@
       a {
       color: #ffffff;
       font-weight: bold;
+      text-decoration: none;
       }
       &__name  {
         padding-top: 20px;
         padding-bottom: 5px;
         font-size: 15px;
+        text-decoration: none;
       } 
       &__text {
         font-size: 11px;
         padding-bottom: 40px;
+        text-decoration: none;
       }
     }
   }
