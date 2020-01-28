@@ -21,23 +21,3 @@ module ChatSpace
 
   end
 end
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
