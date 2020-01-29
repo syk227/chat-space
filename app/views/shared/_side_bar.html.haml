@@ -1,67 +1,22 @@
-.side_bar {
-  height: 100vh;
-  width: 300px;
-  background-color: #2f3e51;
-  
-  .name {  
-    display: flex;
-    align-items: center;
-    height:100px;
-    width:300px;
-    background-color: #253141;
+.side_bar
+  .name
+    .name__box
+      .name__box__list
+        = current_user.name
+      .name__box__icon_list
+        = link_to new_group_path do
+          .name__box__icon_list__icon
+            = link_to new_group_path do
+              = icon('fa', 'edit')
+          .name__box__icon_list__iconn
+            = link_to edit_user_path(current_user.id) do
+              = icon('fas', 'cog', class: 'icon')
 
-    &__box {
-      line-height: center;
-      height: 20px;
-      width: 260px;
-      background-color:#253141;
-      margin: 0px 20px;
-      display: flex;
-      justify-content: space-between;
-       a {
-        color: white;
-       }
-
-      &__list {
-        margin: 0;
-        font-size: 16px;
-        color: white;
-      }
-        
-      &__icon_list {
-        display: flex;
-
-        &__iconn {
-          margin-left: 5px;
-        }
-      }
-    }
-  }
-  .groups_list {
-    height: calc(100vh - 100px);
-    width: 100%;
-    padding: 0 20px;
-    &__items {
-      a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      }
-      &__name  {
-        padding-top: 20px;
-        padding-bottom: 5px;
-        font-size: 15px;
-        text-decoration: none;
-      } 
-      &__text {
-        font-size: 11px;
-        padding-bottom: 40px;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-  
-
-
+  .groups_list
+    - current_user.groups.each do |group|
+      .groups_list__items
+        = link_to group_messages_path(group) do
+          .groups_list__items__name
+            = group.name
+          .groups_list__items__text
+            = group.show_last_message
