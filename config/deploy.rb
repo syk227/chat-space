@@ -5,8 +5,6 @@ lock '3.11.2'
 # Capistranoのログの表示に利用する
 set :application, 'chat-space'
 
-set :linked_files, %w{ config/secrets.yml }
-
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:syk227/chat-space.git'
 
@@ -26,6 +24,8 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 # Unicornの設定ファイルの場所
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+
+set :linked_files, %w{ config/secrets.yml }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
